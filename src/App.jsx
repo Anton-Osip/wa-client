@@ -1,7 +1,9 @@
+import { Layout } from './components/layout/Layout.jsx'
+
 function App() {
 
 	return (
-		<>ПРИВЕТ
+		<><Layout>Hello</Layout>
 		</>)
 }
 
