@@ -13,13 +13,18 @@ export const Router = () => {
 		<BrowserRouter>
 			<Routes>
 				{/* TODO: Auth routes */}
-				{routes.map(route => (
-					<Route
-						key={route.path}
-						path={route.path}
-						element={<route.component />}
-					/>
-				))}
+				{routes.map(route => {
+					if (route.isAuth && !isAuth) {
+						return false
+					}
+					return (
+						<Route
+							key={route.path}
+							path={route.path}
+							element={<route.component />}
+						/>
+					)
+				})}
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
