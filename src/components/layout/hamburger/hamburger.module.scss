@@ -2,46 +2,54 @@
 @use '../../../assets/styles/animations' as animations;
 
 .wrapper {
-  position: relative;
+	position: relative;
 
-  button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
+	button {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
 
-  .menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background-color: #fff;
-    padding: 10px 12px;
-    font-size: 14px;
-    box-shadow: variables.$bx-16;
-    border-radius: 10px 0 10px 10px;
-    min-width: 116px;
-    display: none;
-    animation: opacity 0.4s;
+		> svg > path {
+			fill: #fff;
+		}
+	}
 
-    &.show {
-      display: block;
-    }
+	> button {
+		font-size: 30px;
+	}
 
-    > ul {
-      list-style: none;
+	.menu {
+		position: absolute;
+		top: calc(100% + 8px);
+		right: 0;
+		background-color: #fff;
+		padding: 10px 12px;
+		font-size: 14px;
+		box-shadow: variables.$bx-16;
+		border-radius: 10px 0 10px 10px;
+		min-width: 116px;
+		display: none;
+		animation: opacity 0.4s;
 
-      a {
-        color: #000;
-        text-decoration: none;
-        transition: color 0.2s ease;
+		&.show {
+			display: block;
+		}
 
-        &:hover,
-        &.active {
-          color: variables.$accent;
-          margin: 4px 0;
-        }
-      }
-    }
-  }
+		> ul {
+			list-style: none;
+
+			a {
+				color: #000;
+				text-decoration: none;
+				transition: color 0.2s ease;
+
+				&:hover,
+				&.active {
+					color: variables.$accent;
+					margin: 4px 0;
+				}
+			}
+		}
+	}
 }

@@ -6,9 +6,12 @@ import { Hamburger } from '../hamburger/hamburger.jsx'
 export const Header = ({ backLink }) => {
 	// TODO: react router useHistory
 	const { isAuth } = useAuth()
-	return <header className = {s.header}>
-		<button onClick = {() => {
-		}}><FiArrowLeft color = "white" /></button>
-		<Hamburger />
-	</header>
+	return (
+		<header className={s.header}>
+			<button onClick={() => {}}>
+				<FiArrowLeft color={'#fff'} fontSize={30} />
+			</button>
+			<Hamburger />
+		</header>
+	)
 }
