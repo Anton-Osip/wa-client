@@ -22,7 +22,7 @@ export const Header = ({ backLink = '/' }) => {
 			) : (
 				<button
 					onClick={() => {
-						navigate('/profile')
+						navigate(isAuth ? '/profile' : '/auth')
 					}}
 				>
 					<SlUser color={'#fff'} fontSize={25} />
