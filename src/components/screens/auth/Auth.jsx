@@ -7,12 +7,11 @@ import Field from '../../ui/field/Field'
 import styles from './Auth.module.scss'
 import { Layout } from '../../layout/Layout.jsx'
 import { Button } from '../../ui/button/Button.jsx'
-
-const isLoading = false
-const isLoadingAuth = false
+import { useMutation } from '@tanstack/react-query'
+import AuthService from '../../../services/auth.services.js'
 
 export const Auth = () => {
-	const [type, setType] = useState('auth')
+	const [type, setType] = useState('login')
 
 	/*
 	TODO:
@@ -31,9 +30,20 @@ export const Auth = () => {
 		mode: 'onChange'
 	})
 
+	const { mutate, isLoading } = useMutation(
+		['auth'],
+		({ email, password }) => AuthService.main(email, password, type),
+		{
+			onSuccess: data => {
+				alert('success')
+				console.log(data)
+				reset()
+			}
+		}
+	)
+
 	const onSubmit = data => {
-		// type
-		console.log(data)
+		mutate(data)
 	}
 
 	return (
